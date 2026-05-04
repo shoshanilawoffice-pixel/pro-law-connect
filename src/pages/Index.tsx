@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -10,6 +12,23 @@ import ContactSection from "@/components/sections/ContactSection";
 import FloatingButtons from "@/components/FloatingButtons";
 
 const Index = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      // Defer to allow sections to mount
+      const timeout = setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 50);
+      return () => clearTimeout(timeout);
+    }
+    window.scrollTo({ top: 0 });
+  }, [location.pathname, location.hash]);
+
   return (
     <>
       <Helmet>

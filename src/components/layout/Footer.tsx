@@ -1,5 +1,6 @@
 import { Scale, Phone, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { practiceAreas as practiceAreasData } from "@/data/practiceAreas";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,13 +13,10 @@ const Footer = () => {
     { href: "#contact", label: "צור קשר" },
   ];
 
-  const practiceAreas = [
-    "דיני משפחה וגירושין",
-    "צוואות וירושות",
-    "הסכמים",
-    "גישור",
-    "הוצאה לפועל וחדלות פירעון",
-  ];
+  const practiceAreas = practiceAreasData.map((area) => ({
+    slug: area.slug,
+    title: area.title,
+  }));
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -70,8 +68,13 @@ const Footer = () => {
             <h4 className="font-bold text-lg mb-6 text-gold">תחומי התמחות</h4>
             <ul className="space-y-3">
               {practiceAreas.map((area) => (
-                <li key={area}>
-                  <span className="text-cream/70">{area}</span>
+                <li key={area.slug}>
+                  <Link
+                    to={`/practice-areas/${area.slug}`}
+                    className="text-cream/70 hover:text-gold transition-colors"
+                  >
+                    {area.title}
+                  </Link>
                 </li>
               ))}
             </ul>
