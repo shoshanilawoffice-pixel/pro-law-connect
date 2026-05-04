@@ -42,7 +42,7 @@ const Index = () => {
             name: "שירן שושני - עורכי דין, נוטריון וגישור",
             description: "חברת עורכי דין, נוטריון וגישור המלווה לקוחות פרטיים ועסקיים",
             url: "https://shiran-shoshani-law.co.il",
-            telephone: "+972-3-1234567",
+            telephone: "+972-8-8695008",
             email: "info@shiran-shoshani-law.co.il",
             address: {
               "@type": "PostalAddress",
