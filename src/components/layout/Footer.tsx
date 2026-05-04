@@ -39,12 +39,12 @@ const Footer = () => {
                 <Scale className="w-6 h-6 text-gold" />
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-xl">כהן ושות׳</span>
-                <span className="text-gold/70 text-sm">עורכי דין</span>
+                <span className="font-bold text-xl">שירן שושני</span>
+                <span className="text-gold/70 text-sm">עורכי דין, נוטריון וגישור</span>
               </div>
             </Link>
             <p className="text-cream/70 leading-relaxed mb-6">
-              משרד עורכי דין מוביל עם מעל 25 שנות ניסיון בייצוג לקוחות פרטיים ועסקיים. מחויבות למצוינות וליושרה מקצועית.
+              חברת עורכי דין, נוטריון וגישור המלווה לקוחות פרטיים ועסקיים במגוון תחומי המשפט, מתוך מחויבות למקצועיות, יושרה ושירות אישי.
             </p>
           </div>
 
@@ -96,8 +96,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-gold shrink-0" />
-                <a href="mailto:info@cohen-law.co.il" className="text-cream/70 hover:text-gold transition-colors">
-                  info@cohen-law.co.il
+                <a href="mailto:info@shiran-shoshani-law.co.il" className="text-cream/70 hover:text-gold transition-colors">
+                  info@shiran-shoshani-law.co.il
                 </a>
               </li>
             </ul>
@@ -109,7 +109,7 @@ const Footer = () => {
       <div className="border-t border-gold/10">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-cream/50">
-            <p>© {currentYear} כהן ושות׳ עורכי דין. כל הזכויות שמורות.</p>
+            <p>© {currentYear} שירן שושני - חברת עורכי דין, נוטריון וגישור. כל הזכויות שמורות.</p>
             <div className="flex items-center gap-6">
               <button className="hover:text-gold transition-colors">מדיניות פרטיות</button>
               <button className="hover:text-gold transition-colors">תנאי שימוש</button>

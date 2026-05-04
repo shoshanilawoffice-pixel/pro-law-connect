@@ -81,8 +81,8 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "אימייל",
-      value: "info@cohen-law.co.il",
-      href: "mailto:info@cohen-law.co.il",
+      value: "info@shiran-shoshani-law.co.il",
+      href: "mailto:info@shiran-shoshani-law.co.il",
     },
     {
       icon: MapPin,
