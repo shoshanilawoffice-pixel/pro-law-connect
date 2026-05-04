@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageCircle, Send, Printer } from "lucide-react";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -77,6 +77,12 @@ const ContactSection = () => {
       title: "טלפון",
       value: "08-8695008",
       href: "tel:+972-8-8695008",
+    },
+    {
+      icon: Printer,
+      title: "פקס",
+      value: "08-8695007",
+      href: null,
     },
     {
       icon: Mail,

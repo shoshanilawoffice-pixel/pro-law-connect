@@ -91,8 +91,12 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-gold shrink-0" />
                 <a href="tel:+972-8-8695008" className="text-cream/70 hover:text-gold transition-colors">
-                  08-8695008
+                  טלפון: 08-8695008
                 </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-gold shrink-0 rotate-90" />
+                <span className="text-cream/70">פקס: 08-8695007</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-gold shrink-0" />
