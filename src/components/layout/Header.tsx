@@ -34,9 +34,9 @@ const Header = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-cream font-bold text-lg leading-tight">
-                כהן ושות׳
+                שירן שושני
               </span>
-              <span className="text-gold/70 text-xs">עורכי דין</span>
+              <span className="text-gold/70 text-xs">עורכי דין, נוטריון וגישור</span>
             </div>
           </Link>
 
