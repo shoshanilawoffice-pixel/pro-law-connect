@@ -87,8 +87,8 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-gold mt-1 shrink-0" />
                 <span className="text-cream/70">
-                  רחוב רוטשילד 45, קומה 12<br />
-                  תל אביב-יפו
+                  שדרות התמרים 4, הקניון האדום<br />
+                  קומה 2, אילת
                 </span>
               </li>
               <li className="flex items-center gap-3">

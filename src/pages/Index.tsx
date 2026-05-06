@@ -65,8 +65,8 @@ const Index = () => {
             email: "info@shiran-shoshani-law.co.il",
             address: {
               "@type": "PostalAddress",
-              streetAddress: "רוטשילד 45",
-              addressLocality: "תל אביב-יפו",
+              streetAddress: "שדרות התמרים 4, הקניון האדום, קומה 2",
+              addressLocality: "אילת",
               addressCountry: "IL",
             },
             openingHours: "Mo-Th 09:00-18:00",

@@ -93,8 +93,8 @@ const ContactSection = () => {
     {
       icon: MapPin,
       title: "כתובת",
-      value: "רוטשילד 45, ת״א",
-      href: "https://maps.google.com/?q=Rothschild+45+Tel+Aviv",
+      value: "שדרות התמרים 4, אילת",
+      href: "https://maps.google.com/?q=שדרות+התמרים+4,+אילת",
     },
     {
       icon: Clock,
@@ -282,7 +282,7 @@ const ContactSection = () => {
             {/* Map */}
             <div className="rounded-xl overflow-hidden border border-border h-64">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.0391752968884!2d34.77155731516694!3d32.06388998119378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b82a6153b21%3A0x8d07a69c8c30c4a!2sRothschild%20Blvd%2045%2C%20Tel%20Aviv-Yafo!5e0!3m2!1sen!2sil!4v1640000000000!5m2!1sen!2sil"
+                src="https://maps.google.com/maps?q=Hatmarim+4+Eilat&hl=iw&t=m&z=17&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
