@@ -82,9 +82,9 @@ const PracticeAreaPage = () => {
                     </Link>
                   </Button>
                   <Button variant="heroOutline" size="xl" asChild>
-                    <a href="tel:+972-8-8695008">
+                    <a href="tel:+972-50-6421322">
                       <Phone className="w-5 h-5" />
-                      08-8695008
+                      050-6421322
                     </a>
                   </Button>
                 </div>

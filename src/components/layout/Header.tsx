@@ -123,9 +123,9 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:+972-8-8695008" className="flex items-center gap-2 text-gold hover:text-gold-light transition-colors">
+            <a href="tel:+972-50-6421322" className="flex items-center gap-2 text-gold hover:text-gold-light transition-colors">
               <Phone className="w-4 h-4" />
-              <span className="font-medium">08-8695008</span>
+              <span className="font-medium">050-6421322</span>
             </a>
             <Button variant="gold" onClick={() => goToHashSection("contact")}>
               ייעוץ ראשוני
@@ -206,11 +206,11 @@ const Header = () => {
 
               <div className="pt-4 mt-2 border-t border-gold/10 flex flex-col gap-3">
                 <a
-                  href="tel:+972-8-8695008"
+                  href="tel:+972-50-6421322"
                   className="flex items-center gap-2 text-gold px-4 py-2"
                 >
                   <Phone className="w-4 h-4" />
-                  <span className="font-medium">08-8695008</span>
+                  <span className="font-medium">050-6421322</span>
                 </a>
                 <Button
                   variant="gold"
