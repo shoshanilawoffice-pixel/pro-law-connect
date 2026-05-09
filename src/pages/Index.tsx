@@ -10,6 +10,7 @@ import TeamSection from "@/components/sections/TeamSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactSection from "@/components/sections/ContactSection";
 import FloatingButtons from "@/components/FloatingButtons";
+import AccessibilityWidget from "@/components/AccessibilityWidget";
 
 const Index = () => {
   const location = useLocation();
@@ -76,7 +77,7 @@ const Index = () => {
         </script>
       </Helmet>
 
-      <div className="min-h-screen">
+      <div className="min-h-screen" dir="rtl">
         <Header />
         <main>
           <HeroSection />
@@ -88,6 +89,7 @@ const Index = () => {
         </main>
         <Footer />
         <FloatingButtons />
+        <AccessibilityWidget />
       </div>
     </>
   );
