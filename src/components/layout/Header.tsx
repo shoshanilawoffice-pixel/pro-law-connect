@@ -87,7 +87,7 @@ const Header = () => {
                         goToHashSection("practice-areas");
                         setIsAreasOpen(false);
                       }}
-                      className="w-full text-right px-4 py-3 text-gold hover:bg-cream/5 font-semibold border-b border-gold/10 text-sm"
+                      className="w-full text-left px-4 py-3 text-gold hover:bg-cream/5 font-semibold border-b border-gold/10 text-sm"
                     >
                       כל תחומי ההתמחות
                     </button>
@@ -148,13 +148,13 @@ const Header = () => {
             <div className="flex flex-col gap-1">
               <button
                 onClick={() => goToHashSection("hero")}
-                className="px-4 py-3 text-cream/80 hover:text-gold hover:bg-cream/5 font-medium transition-colors rounded-md text-right"
+                className="px-4 py-3 text-cream/80 hover:text-gold hover:bg-cream/5 font-medium transition-colors rounded-md text-left"
               >
                 ראשי
               </button>
               <button
                 onClick={() => goToHashSection("about")}
-                className="px-4 py-3 text-cream/80 hover:text-gold hover:bg-cream/5 font-medium transition-colors rounded-md text-right"
+                className="px-4 py-3 text-cream/80 hover:text-gold hover:bg-cream/5 font-medium transition-colors rounded-md text-left"
               >
                 אודות
               </button>
@@ -162,7 +162,7 @@ const Header = () => {
               {/* Mobile Practice Areas Collapsible */}
               <button
                 onClick={() => setIsMobileAreasOpen(!isMobileAreasOpen)}
-                className="px-4 py-3 text-cream/80 hover:text-gold hover:bg-cream/5 font-medium transition-colors rounded-md text-right flex items-center justify-between"
+                className="px-4 py-3 text-cream/80 hover:text-gold hover:bg-cream/5 font-medium transition-colors rounded-md text-left flex items-center justify-between"
                 aria-expanded={isMobileAreasOpen}
               >
                 <span>תחומי התמחות</span>
@@ -171,10 +171,10 @@ const Header = () => {
                 />
               </button>
               {isMobileAreasOpen && (
-                <div className="mr-4 border-r border-gold/10 pr-4 flex flex-col gap-1">
+                <div className="ml-4 border-l border-gold/10 pl-4 flex flex-col gap-1">
                   <button
                     onClick={() => goToHashSection("practice-areas")}
-                    className="px-3 py-2 text-gold hover:bg-cream/5 font-medium transition-colors rounded-md text-right text-sm"
+                    className="px-3 py-2 text-gold hover:bg-cream/5 font-medium transition-colors rounded-md text-left text-sm"
                   >
                     כל תחומי ההתמחות
                   </button>
@@ -186,7 +186,7 @@ const Header = () => {
                         setIsMenuOpen(false);
                         setIsMobileAreasOpen(false);
                       }}
-                      className="px-3 py-2 text-cream/70 hover:text-gold hover:bg-cream/5 transition-colors rounded-md text-right text-sm"
+                      className="px-3 py-2 text-cream/70 hover:text-gold hover:bg-cream/5 transition-colors rounded-md text-left text-sm"
                     >
                       {area.title}
                     </Link>
@@ -198,7 +198,7 @@ const Header = () => {
                 <button
                   key={link.hash}
                   onClick={() => goToHashSection(link.hash)}
-                  className="px-4 py-3 text-cream/80 hover:text-gold hover:bg-cream/5 font-medium transition-colors rounded-md text-right"
+                  className="px-4 py-3 text-cream/80 hover:text-gold hover:bg-cream/5 font-medium transition-colors rounded-md text-left"
                 >
                   {link.label}
                 </button>

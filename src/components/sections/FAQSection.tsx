@@ -64,7 +64,7 @@ const FAQSection = () => {
                 value={`item-${index}`}
                 className="bg-card rounded-xl border border-border px-6 shadow-card data-[state=open]:shadow-elegant transition-shadow duration-300"
               >
-                <AccordionTrigger className="text-lg font-semibold text-foreground hover:text-gold py-6 text-right">
+                <AccordionTrigger className="text-lg font-semibold text-foreground hover:text-gold py-6 text-left">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
