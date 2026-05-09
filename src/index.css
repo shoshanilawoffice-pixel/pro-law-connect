@@ -6,70 +6,69 @@
 
 @layer base {
   :root {
-    /* Light, airy professional palette - blues, gray, white (no gold) */
-    --background: 210 25% 99%;
-    --foreground: 220 25% 20%;
+    /* Law firm professional color palette */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 25% 20%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 20%;
+    --popover-foreground: 222 47% 11%;
 
-    /* Light/medium blue - approachable trust */
-    --primary: 215 55% 40%;
-    --primary-foreground: 0 0% 100%;
+    /* Deep navy blue - trust and authority */
+    --primary: 222 47% 11%;
+    --primary-foreground: 40 33% 94%;
 
-    --secondary: 210 25% 94%;
-    --secondary-foreground: 215 50% 25%;
+    /* Warm gold accent - prestige */
+    --secondary: 40 33% 50%;
+    --secondary-foreground: 222 47% 11%;
 
     --muted: 210 20% 96%;
-    --muted-foreground: 215 15% 45%;
+    --muted-foreground: 215 16% 47%;
 
-    /* Bright blue accent (replaces gold) */
-    --accent: 205 80% 50%;
-    --accent-foreground: 0 0% 100%;
+    /* Gold accent for highlights */
+    --accent: 40 50% 55%;
+    --accent-foreground: 222 47% 11%;
 
-    --destructive: 0 75% 55%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 25% 90%;
-    --input: 214 25% 90%;
-    --ring: 205 80% 50%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 40 50% 55%;
 
     --radius: 0.5rem;
 
-    /* Legacy "gold" tokens remapped to bright blue accent for backwards-compat */
-    --gold: 205 80% 50%;
-    --gold-light: 205 85% 65%;
-    --gold-dark: 210 70% 40%;
-    /* Legacy "navy" tokens remapped to lighter blue */
-    --navy: 215 55% 40%;
-    --navy-light: 215 45% 55%;
-    --navy-muted: 215 30% 65%;
-    /* Legacy "cream" tokens remapped to white/light gray */
-    --cream: 210 25% 99%;
-    --cream-dark: 210 20% 94%;
+    /* Custom tokens for law firm */
+    --gold: 40 50% 55%;
+    --gold-light: 40 50% 70%;
+    --gold-dark: 40 50% 40%;
+    --navy: 222 47% 11%;
+    --navy-light: 222 30% 20%;
+    --navy-muted: 222 20% 30%;
+    --cream: 40 33% 94%;
+    --cream-dark: 40 20% 90%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(210 25% 99%) 0%, hsl(210 30% 95%) 50%, hsl(205 60% 92%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(205 80% 50%) 0%, hsl(200 85% 60%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 25% 98%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(222 30% 18%) 50%, hsl(222 47% 11%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(40 50% 55%) 0%, hsl(40 50% 65%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(40 20% 98%) 100%);
 
     /* Shadows */
-    --shadow-elegant: 0 4px 20px -4px hsl(215 40% 30% / 0.08);
-    --shadow-gold: 0 6px 24px -6px hsl(205 80% 50% / 0.35);
-    --shadow-card: 0 8px 30px -8px hsl(215 40% 30% / 0.08);
+    --shadow-elegant: 0 4px 20px -4px hsl(222 47% 11% / 0.1);
+    --shadow-gold: 0 4px 20px -4px hsl(40 50% 55% / 0.3);
+    --shadow-card: 0 8px 30px -8px hsl(222 47% 11% / 0.08);
 
     /* Sidebar tokens */
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 25% 20%;
-    --sidebar-primary: 205 80% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 25% 94%;
-    --sidebar-accent-foreground: 215 50% 25%;
-    --sidebar-border: 214 25% 90%;
-    --sidebar-ring: 205 80% 50%;
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 40 33% 94%;
+    --sidebar-primary: 40 50% 55%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 30% 20%;
+    --sidebar-accent-foreground: 40 33% 94%;
+    --sidebar-border: 222 20% 25%;
+    --sidebar-ring: 40 50% 55%;
   }
 
   .dark {
@@ -109,7 +108,7 @@
   }
 
   html {
-    direction: ltr;
+    direction: rtl;
     scroll-behavior: smooth;
   }
 
@@ -211,69 +210,4 @@
 /* Selection color */
 ::selection {
   @apply bg-accent/20 text-foreground;
-}
-
-/* ===== Accessibility widget classes ===== */
-html.a11y-large-text { font-size: 112.5%; }
-html.a11y-xlarge-text { font-size: 125%; }
-html.a11y-small-text { font-size: 92%; }
-
-html.a11y-readable-font,
-html.a11y-readable-font * {
-  font-family: Arial, Helvetica, sans-serif !important;
-  letter-spacing: 0.02em;
-}
-
-html.a11y-high-contrast {
-  --background: 0 0% 0%;
-  --foreground: 60 100% 50%;
-  --card: 0 0% 0%;
-  --card-foreground: 60 100% 50%;
-  --popover: 0 0% 0%;
-  --popover-foreground: 60 100% 50%;
-  --primary: 60 100% 50%;
-  --primary-foreground: 0 0% 0%;
-  --secondary: 0 0% 10%;
-  --secondary-foreground: 60 100% 50%;
-  --muted: 0 0% 10%;
-  --muted-foreground: 60 100% 80%;
-  --accent: 60 100% 50%;
-  --accent-foreground: 0 0% 0%;
-  --border: 60 100% 50%;
-  --input: 0 0% 10%;
-  --ring: 60 100% 50%;
-  --gold: 60 100% 50%;
-  --gold-light: 60 100% 65%;
-  --gold-dark: 60 100% 40%;
-  --navy: 0 0% 0%;
-  --navy-light: 0 0% 10%;
-  --cream: 60 100% 50%;
-  --cream-dark: 60 100% 80%;
-}
-html.a11y-high-contrast img,
-html.a11y-high-contrast video { filter: grayscale(100%) contrast(1.2); }
-
-html.a11y-grayscale,
-html.a11y-grayscale * { filter: grayscale(100%) !important; }
-
-html.a11y-highlight-links a,
-html.a11y-highlight-links button {
-  outline: 2px solid hsl(var(--accent)) !important;
-  outline-offset: 2px;
-  text-decoration: underline !important;
-}
-
-html.a11y-large-cursor,
-html.a11y-large-cursor * {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='black' stroke='white' stroke-width='1.5'><path d='M3 2l7 18 2-8 8-2z'/></svg>") 0 0, auto !important;
-}
-
-html.a11y-stop-animations,
-html.a11y-stop-animations *,
-html.a11y-stop-animations *::before,
-html.a11y-stop-animations *::after {
-  animation-duration: 0s !important;
-  animation-delay: 0s !important;
-  transition-duration: 0s !important;
-  transition-delay: 0s !important;
 }
