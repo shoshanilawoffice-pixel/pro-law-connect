@@ -2,7 +2,7 @@ import { Phone, MessageCircle } from "lucide-react";
 
 const FloatingButtons = () => {
   return (
-    <div className="fixed bottom-6 left-6 z-50 flex flex-col gap-3">
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
       {/* WhatsApp Button */}
       <a
         href="https://wa.me/972506421322?text=שלום, אשמח לקבל ייעוץ משפטי"
@@ -12,7 +12,7 @@ const FloatingButtons = () => {
         aria-label="צור קשר בוואטסאפ"
       >
         <MessageCircle className="w-6 h-6 text-primary-foreground" />
-        <span className="absolute left-full mr-3 px-3 py-1.5 bg-primary text-cream text-sm font-medium rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+        <span className="absolute right-full mr-3 px-3 py-1.5 bg-primary text-cream text-sm font-medium rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
           וואטסאפ
         </span>
       </a>
