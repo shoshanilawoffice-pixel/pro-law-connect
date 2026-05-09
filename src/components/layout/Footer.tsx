@@ -117,10 +117,10 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-cream/50">
             <p>© {currentYear} שירן שושני - חברת עורכי דין, נוטריון וגישור. כל הזכויות שמורות.</p>
-            <div className="flex items-center gap-6">
-              <button className="hover:text-gold transition-colors">מדיניות פרטיות</button>
-              <button className="hover:text-gold transition-colors">תנאי שימוש</button>
-              <button className="hover:text-gold transition-colors">נגישות</button>
+            <div className="flex flex-wrap items-center gap-6">
+              <Link to="/association" className="hover:text-gold transition-colors">עמותה</Link>
+              <Link to="/privacy" className="hover:text-gold transition-colors">מדיניות פרטיות</Link>
+              <Link to="/accessibility" className="hover:text-gold transition-colors">הצהרת נגישות</Link>
             </div>
           </div>
         </div>
