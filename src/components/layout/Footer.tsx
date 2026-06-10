@@ -115,12 +115,12 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-gold/10">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-cream/50">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-cream/60">
             <p>© {currentYear} שירן שושני - חברת עורכי דין, נוטריון וגישור. כל הזכויות שמורות.</p>
             <div className="flex items-center gap-6">
-              <button className="hover:text-gold transition-colors">מדיניות פרטיות</button>
-              <button className="hover:text-gold transition-colors">תנאי שימוש</button>
-              <button className="hover:text-gold transition-colors">נגישות</button>
+              <Link to="/association" className="hover:text-gold transition-colors">עמותה</Link>
+              <Link to="/privacy" className="hover:text-gold transition-colors">מדיניות פרטיות</Link>
+              <Link to="/accessibility" className="hover:text-gold transition-colors">הצהרת נגישות</Link>
             </div>
           </div>
         </div>

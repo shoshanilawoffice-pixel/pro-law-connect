@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import AccessibilityWidget from "@/components/AccessibilityWidget";
 import { Button } from "@/components/ui/button";
 import { practiceAreas, getPracticeAreaBySlug } from "@/data/practiceAreas";
 
@@ -191,6 +192,7 @@ const PracticeAreaPage = () => {
 
         <Footer />
         <FloatingButtons />
+        <AccessibilityWidget />
       </div>
     </>
   );
