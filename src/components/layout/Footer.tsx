@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import logoAsset from "@/assets/logo.jpeg.asset.json";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -8,8 +9,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-12 h-12 rounded-full border-2 border-accent flex items-center justify-center text-accent font-serif">
-                ש.ש
+              <div className="w-12 h-12 rounded-full overflow-hidden bg-black border-2 border-accent flex items-center justify-center shrink-0">
+                <img src={logoAsset.url} alt="שירן שושני - לוגו" className="w-full h-full object-cover" />
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-lg">שירן שושני</span>

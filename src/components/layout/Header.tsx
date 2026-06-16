@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logoAsset from "@/assets/logo.jpeg.asset.json";
 
 const navItems = [
   { id: "about", label: "אודות" },
@@ -24,8 +25,8 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo — right */}
           <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-3 group">
-            <div className="w-12 h-12 rounded-full border-2 border-accent flex items-center justify-center font-serif text-accent text-lg tracking-tight">
-              ש.ש
+            <div className="w-12 h-12 rounded-full overflow-hidden bg-black border-2 border-accent flex items-center justify-center shrink-0">
+              <img src={logoAsset.url} alt="שירן שושני - לוגו" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col text-right leading-tight">
               <span className="text-foreground font-bold text-lg">שירן שושני</span>
