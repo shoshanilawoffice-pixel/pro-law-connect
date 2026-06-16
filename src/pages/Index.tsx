@@ -195,15 +195,18 @@ const Index = () => {
               </h2>
               <div className="w-16 h-px bg-accent mx-auto mb-14" />
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {practiceAreas.map((a) => (
+                {practiceAreas.map(({ title, desc, Icon }) => (
                   <article
-                    key={a.title}
+                    key={title}
                     className="bg-card border border-border p-7 hover:border-accent transition-colors group"
                   >
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full border border-accent/40 text-accent mb-4 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                      <Icon size={24} strokeWidth={1.5} />
+                    </div>
                     <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
-                      {a.title}
+                      {title}
                     </h3>
-                    <p className="text-foreground/70 leading-relaxed text-sm">{a.desc}</p>
+                    <p className="text-foreground/70 leading-relaxed text-sm">{desc}</p>
                   </article>
                 ))}
               </div>
