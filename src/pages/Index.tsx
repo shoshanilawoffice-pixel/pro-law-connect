@@ -200,8 +200,8 @@ const Index = () => {
                     key={title}
                     className="bg-card border border-border p-7 hover:border-accent transition-colors group"
                   >
-                    <div className="w-12 h-12 flex items-center justify-center rounded-full border border-accent/40 text-accent mb-4 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-                      <Icon size={24} strokeWidth={1.5} />
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center rounded-full border border-accent/40 text-accent mb-5 group-hover:bg-accent group-hover:text-accent-foreground transition-colors flex-shrink-0">
+                      <Icon className="w-6 h-6 sm:w-7 sm:h-7" strokeWidth={1.5} />
                     </div>
                     <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
                       {title}
