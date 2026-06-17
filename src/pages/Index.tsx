@@ -6,7 +6,7 @@ import Footer from "@/components/layout/Footer";
 import ContactForm from "@/components/sections/ContactForm";
 import FloatingButtons from "@/components/FloatingButtons";
 import AccessibilityWidget from "@/components/AccessibilityWidget";
-import heroImage from "@/assets/shiran-hero.jpg";
+import heroImage from "@/assets/hero-lawyers.jpg.asset.json";
 import {
   Handshake,
   Baby,
@@ -124,8 +124,8 @@ const Index = () => {
           {/* HERO */}
           <section id="hero" className="relative w-full h-[80vh] min-h-[520px] overflow-hidden">
             <img
-              src={heroImage}
-              alt="עו״ד שירן שושני"
+              src={heroImage.url}
+              alt="עורכי דין מקצועיים במשרד עורכי דין שירן שושני"
               className="absolute inset-0 w-full h-full object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-l from-background/70 via-background/10 to-transparent" />
