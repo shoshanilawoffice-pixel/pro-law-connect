@@ -6,7 +6,7 @@ import Footer from "@/components/layout/Footer";
 import ContactForm from "@/components/sections/ContactForm";
 import FloatingButtons from "@/components/FloatingButtons";
 import AccessibilityWidget from "@/components/AccessibilityWidget";
-import heroImage from "@/assets/hero-lawyers.jpg.asset.json";
+import heroImage from "@/assets/hero-suits.jpg.asset.json";
 import {
   Handshake,
   Baby,
