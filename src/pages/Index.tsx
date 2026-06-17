@@ -122,11 +122,11 @@ const Index = () => {
 
         <main className="pt-20">
           {/* HERO */}
-          <section id="hero" className="relative w-full h-[80vh] min-h-[520px] overflow-hidden">
+          <section id="hero" className="relative w-full h-[55vh] md:h-[80vh] min-h-[400px] md:min-h-[520px] overflow-hidden">
             <img
               src={heroImage.url}
               alt="עורכי דין מקצועיים במשרד עורכי דין שירן שושני"
-              className="absolute inset-0 w-full h-full object-cover object-top"
+              className="absolute inset-0 w-full h-full object-cover object-[50%_20%]"
             />
             <div className="absolute inset-0 bg-gradient-to-l from-background/70 via-background/10 to-transparent" />
             <div className="relative container mx-auto px-6 h-full flex items-center justify-start">
