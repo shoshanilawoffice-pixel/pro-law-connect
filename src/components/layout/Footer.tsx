@@ -146,23 +146,61 @@ const Footer = () => {
                     באתר פועל תפריט נגישות (הכפתור הצף בצד המסך) המאפשר: הגדלת טקסט, ניגודיות
                     גבוהה, ניגודיות שחור/צהוב, הדגשת קישורים, גופן קריא והפחתת אנימציות.
                   </p>
-                  <p>
-                    נתקלתם בבעיית נגישות? נשמח שתעדכנו אותנו ונטפל בהקדם:
-                    <br />
-                    רכזת נגישות: עו"ד שירן שושני-אוכמן · טלפון:{" "}
-                    <a href={`tel:${site.phoneIntl}`} className="text-accent hover:underline">{site.phone}</a>{" "}
-                    · דוא"ל:{" "}
-                    <a href={`mailto:${site.email}`} className="text-accent hover:underline">{site.email}</a>
-                  </p>
+                  <div className="bg-muted rounded-lg p-4">
+                    <p className="font-bold text-foreground mb-2">רכזת הנגישות של המשרד:</p>
+                    <ul className="space-y-1">
+                      <li><strong>שם מלא:</strong> עו"ד שירן שושני</li>
+                      <li>
+                        <strong>טלפון המשרד:</strong>{" "}
+                        <a href={`tel:${site.phoneIntl}`} className="text-accent hover:underline">{site.phone}</a>
+                      </li>
+                      <li>
+                        <strong>דוא"ל:</strong>{" "}
+                        <a href={`mailto:${site.email}`} className="text-accent hover:underline">{site.email}</a>
+                      </li>
+                    </ul>
+                    <p className="mt-2 text-foreground/70">
+                      נתקלתם בבעיית נגישות? פנו אלינו ונטפל בהקדם האפשרי.
+                    </p>
+                  </div>
                   <Link to="/accessibility" className="inline-block text-accent font-semibold hover:underline">
                     → להצהרת הנגישות המלאה
                   </Link>
                 </div>
               </DialogContent>
             </Dialog>
-            <Link to="/privacy" className="hover:text-accent transition-colors underline underline-offset-2">
-              מדיניות פרטיות
-            </Link>
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="hover:text-accent transition-colors underline underline-offset-2">
+                  מדיניות פרטיות
+                </button>
+              </DialogTrigger>
+              <DialogContent dir="rtl" className="max-w-lg max-h-[80vh] overflow-y-auto text-right">
+                <DialogHeader>
+                  <DialogTitle className="text-right text-xl">מדיניות פרטיות — עיקרי הדברים</DialogTitle>
+                </DialogHeader>
+                <div className="space-y-3 text-sm leading-relaxed text-foreground/85">
+                  <p>
+                    <strong>איזה מידע נאסף?</strong> שם, טלפון ודוא"ל שאתם מוסרים מרצונכם בטופס
+                    יצירת הקשר, בוואטסאפ או בטלפון. לא חלה עליכם חובה חוקית למסור מידע.
+                  </p>
+                  <p>
+                    <strong>למה הוא נאסף?</strong> אך ורק לצורך חזרה לפונים, תיאום פגישת ייעוץ
+                    ומתן השירות המשפטי. לא נשלח אליכם דיוור שיווקי ללא הסכמה מפורשת.
+                  </p>
+                  <p>
+                    <strong>התחייבותנו:</strong> המידע נשמר באופן מאובטח בהתאם לחוק הגנת
+                    הפרטיות, התשמ"א-1981, ולתיקון 13; הוא אינו מועבר לצדדים שלישיים ללא
+                    הסכמה או חובה שבדין, ונשמר רק למשך הזמן הנדרש. עומדות לכם זכויות עיון,
+                    תיקון ומחיקה — בפנייה אלינו:{" "}
+                    <a href={`mailto:${site.email}`} className="text-accent hover:underline">{site.email}</a>.
+                  </p>
+                  <Link to="/privacy" className="inline-block text-accent font-semibold hover:underline">
+                    → למדיניות הפרטיות המלאה
+                  </Link>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>
