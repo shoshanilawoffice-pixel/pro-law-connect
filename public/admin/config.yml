@@ -111,6 +111,53 @@ collections:
                 required: false
                 hint: "אופציונלי — אם לא תועלה תמונה, יוצג אייקון אוטומטי לפי שם התחום."
 
+          # ---- שירותי המשרד ----
+          - label: "⭐ שירותי המשרד"
+            name: "services"
+            widget: "list"
+            label_singular: "שירות"
+            collapsed: true
+            field: { label: "שירות", name: "service", widget: "string" }
+            hint: "רשימת הנקודות בסקשן \"שירותי המשרד\". גררו לשינוי סדר."
+
+          # ---- ציטוטים ----
+          - label: "💬 ציטוטים (רצועות בגופן תנ\"כי)"
+            name: "quotes"
+            widget: "list"
+            label_singular: "ציטוט"
+            collapsed: true
+            minimize_collapsed: true
+            summary: "{{fields.text}}"
+            hint: "עד 4 ציטוטים המפוזרים לאורך דף הבית."
+            fields:
+              - { label: "טקסט הציטוט", name: "text", widget: "string" }
+              - { label: "מחבר/ת", name: "author", widget: "string" }
+
+          # ---- המלצות לקוחות ----
+          - label: "🌟 המלצות לקוחות"
+            name: "testimonials"
+            widget: "list"
+            label_singular: "המלצה"
+            collapsed: true
+            minimize_collapsed: true
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "שם (למשל: ל.כ, אילת)", name: "name", widget: "string" }
+              - { label: "טקסט ההמלצה", name: "text", widget: "text" }
+
+          # ---- מאמרים ----
+          - label: "📰 מאמרים"
+            name: "articles"
+            widget: "list"
+            label_singular: "מאמר"
+            collapsed: true
+            minimize_collapsed: true
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "כותרת", name: "title", widget: "string" }
+              - { label: "תקציר", name: "excerpt", widget: "text" }
+              - { label: "תאריך", name: "date", widget: "string", hint: "למשל: 26/08/2025" }
+
           # ---- קבוצה 4: פרטי התקשרות ומפת הגעה ----
           - label: "📞 פרטי התקשרות ומפת הגעה"
             name: "contact"
@@ -127,3 +174,67 @@ collections:
                 widget: "string"
                 required: false
                 hint: "הכתובת בתחתית האתר תהפוך לקישור למפה."
+
+      # ================= עמוד מתגשרים והעמותה =================
+      - name: "mitgashrim"
+        label: "עמוד מתגשרים והעמותה"
+        file: "src/content/mitgashrim.json"
+        fields:
+          - { label: "כותרת ראשית", name: "heroTitle", widget: "string" }
+          - { label: "כותרת משנה", name: "heroSubtitle", widget: "string" }
+          - { label: "פסקת פתיחה", name: "heroIntro", widget: "text" }
+          - { label: "לוגו התוכנית", name: "logo", widget: "image" }
+          - { label: "כותרת סקשן העקרונות", name: "principlesTitle", widget: "string" }
+          - label: "עקרונות התוכנית"
+            name: "principles"
+            widget: "list"
+            label_singular: "עיקרון"
+            collapsed: true
+            minimize_collapsed: true
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "כותרת", name: "title", widget: "string" }
+              - { label: "תיאור", name: "desc", widget: "text" }
+          - { label: "כותרת \"למה גישור\"", name: "whyTitle", widget: "string" }
+          - label: "תוכן \"למה גישור\""
+            name: "whyBody"
+            widget: "markdown"
+            buttons: ["bold", "italic", "bulleted-list", "link"]
+            editor_components: []
+          - { label: "ציטוט (בגופן תנ\"כי)", name: "quote", widget: "string", required: false }
+          - { label: "כותרת סקשן העמותה", name: "amutaTitle", widget: "string" }
+          - label: "תוכן סקשן העמותה"
+            name: "amutaBody"
+            widget: "markdown"
+            buttons: ["bold", "italic", "bulleted-list", "link"]
+            editor_components: []
+          - { label: "כותרת טופס יצירת הקשר", name: "contactTitle", widget: "string" }
+          - { label: "טקסט מתחת לכותרת הטופס", name: "contactSubtitle", widget: "string" }
+
+      # ================= הצהרת נגישות =================
+      - name: "accessibility"
+        label: "הצהרת נגישות"
+        file: "src/content/accessibility.json"
+        fields:
+          - { label: "כותרת", name: "title", widget: "string" }
+          - { label: "שורת תאריך עדכון", name: "updated", widget: "string" }
+          - label: "תוכן ההצהרה"
+            name: "body"
+            widget: "markdown"
+            buttons: ["bold", "italic", "bulleted-list", "numbered-list", "link", "heading-two", "heading-three"]
+            editor_components: []
+            hint: "כותרות סעיפים עם \"כותרת 2\", רשימות וקישורים."
+
+      # ================= מדיניות פרטיות =================
+      - name: "privacy"
+        label: "מדיניות פרטיות"
+        file: "src/content/privacy.json"
+        fields:
+          - { label: "כותרת", name: "title", widget: "string" }
+          - { label: "שורת תאריך עדכון", name: "updated", widget: "string" }
+          - label: "תוכן המדיניות"
+            name: "body"
+            widget: "markdown"
+            buttons: ["bold", "italic", "bulleted-list", "numbered-list", "link", "heading-two", "heading-three"]
+            editor_components: []
+            hint: "כותרות סעיפים עם \"כותרת 2\", רשימות וקישורים."

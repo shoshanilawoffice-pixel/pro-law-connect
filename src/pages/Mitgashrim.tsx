@@ -1,36 +1,18 @@
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { HeartHandshake, Sparkles, Users, ShieldCheck, Baby, Sun } from "lucide-react";
+import { HeartHandshake, Baby, ShieldCheck, Sparkles, Users, Sun, type LucideIcon } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import AccessibilityWidget from "@/components/AccessibilityWidget";
 import ContactForm from "@/components/sections/ContactForm";
+import Markdown from "@/components/Markdown";
 import { site } from "@/config/site";
+import content from "@/content/mitgashrim.json";
 
-const principles = [
-  {
-    Icon: HeartHandshake,
-    title: "גישור וטיפול יחד",
-    desc: "הליך גישורי וטיפולי משולב, המלווה את בני הזוג לא רק במישור המשפטי אלא גם במישור הרגשי.",
-  },
-  {
-    Icon: Baby,
-    title: "טובת הילדים במרכז",
-    desc: "חשיבה על עתיד משותף כמשפחה שמשתנה מזוגיות להורות, בדגש על יציבות וביטחון לילדים.",
-  },
-  {
-    Icon: ShieldCheck,
-    title: "גירושין בצורה בריאה",
-    desc: "ניהול ההליך בצורה מכבדת והוגנת, שמפחיתה קונפליקט ומאפשרת לכל צד להתחיל דרך חדשה.",
-  },
-  {
-    Icon: Sparkles,
-    title: "מאירים לכם את הדרך",
-    desc: "ליווי אישי צמוד מתחילת ההליך ועד סופו — את המסע אנחנו עוברים ביחד.",
-  },
-];
+/* אייקונים לעקרונות התוכנית — לפי הסדר; אם מוסיפים עקרונות בפאנל, האייקונים חוזרים על עצמם */
+const principleIcons: LucideIcon[] = [HeartHandshake, Baby, ShieldCheck, Sparkles];
 
 const Mitgashrim = () => {
   useEffect(() => {
@@ -40,11 +22,8 @@ const Mitgashrim = () => {
   return (
     <>
       <Helmet>
-        <title>מתגשרים – מאירים לכם את הדרך | {site.fullTitle}</title>
-        <meta
-          name="description"
-          content="מתגשרים – תוכנית גישור ייחודית ובלעדית למשרד שירן שושני: הליך גישורי וטיפולי לגירושין בצורה בריאה, בדגש על טובת הילדים. לצד המשרד פועלת עמותת אור עליון-נהורא עלאה."
-        />
+        <title>{content.heroTitle} – {content.heroSubtitle} | {site.fullTitle}</title>
+        <meta name="description" content={content.heroIntro.slice(0, 155)} />
         <link rel="canonical" href={`${site.url}/mitgashrim`} />
       </Helmet>
 
@@ -55,16 +34,14 @@ const Mitgashrim = () => {
           <section className="py-20 bg-primary text-primary-foreground">
             <div className="container mx-auto px-6 max-w-4xl text-center">
               <img
-                src="/images/mitgashrim-logo.jpeg"
-                alt="מתגשרים – לוגו התוכנית"
+                src={content.logo}
+                alt={`${content.heroTitle} – לוגו התוכנית`}
                 className="w-36 h-36 md:w-44 md:h-44 object-cover rounded-full border-2 border-accent mx-auto mb-8"
               />
-              <h1 className="text-4xl lg:text-5xl font-bold mb-4">מתגשרים</h1>
-              <p className="text-accent text-xl tracking-wide mb-6">מאירים לכם את הדרך</p>
+              <h1 className="text-4xl lg:text-5xl font-bold mb-4">{content.heroTitle}</h1>
+              <p className="text-accent text-xl tracking-wide mb-6">{content.heroSubtitle}</p>
               <p className="text-primary-foreground/85 text-lg leading-loose max-w-2xl mx-auto">
-                תוכנית גישור מיוחדת ובלעדית למשרד — הליך גישורי וטיפולי לניהול הליך גירושין
-                בצורה בריאה. פרי פיתוחה של עו"ד שירן שושני-אוכמן, מגשרת מוסמכת ובעלת תואר שני
-                בניהול ויישוב סכסוכים.
+                {content.heroIntro}
               </p>
             </div>
           </section>
@@ -73,19 +50,22 @@ const Mitgashrim = () => {
           <section className="py-20">
             <div className="container mx-auto px-6">
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-center mb-3">
-                איך זה עובד?
+                {content.principlesTitle}
               </h2>
               <div className="w-16 h-px bg-accent mx-auto mb-14" />
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                {principles.map(({ Icon, title, desc }) => (
-                  <article key={title} className="bg-card border border-border p-7 text-right hover:border-accent transition-colors group">
-                    <div className="w-14 h-14 flex items-center justify-center rounded-full border border-accent/40 text-accent mb-5 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-                      <Icon className="w-6 h-6" strokeWidth={1.5} />
-                    </div>
-                    <h3 className="text-lg font-bold text-foreground mb-2">{title}</h3>
-                    <p className="text-foreground/70 text-sm leading-relaxed">{desc}</p>
-                  </article>
-                ))}
+                {content.principles.map(({ title, desc }, i) => {
+                  const Icon = principleIcons[i % principleIcons.length];
+                  return (
+                    <article key={title} className="bg-card border border-border p-7 text-right hover:border-accent transition-colors group">
+                      <div className="w-14 h-14 flex items-center justify-center rounded-full border border-accent/40 text-accent mb-5 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                        <Icon className="w-6 h-6" strokeWidth={1.5} />
+                      </div>
+                      <h3 className="text-lg font-bold text-foreground mb-2">{title}</h3>
+                      <p className="text-foreground/70 text-sm leading-relaxed">{desc}</p>
+                    </article>
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -94,21 +74,16 @@ const Mitgashrim = () => {
           <section className="py-16 bg-muted/40">
             <div className="container mx-auto px-6 max-w-3xl text-right">
               <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-6">
-                למה גישור במקום מלחמה?
+                {content.whyTitle}
               </h2>
-              <div className="space-y-4 text-foreground/85 leading-loose text-lg">
-                <p>
-                  גישור הוא תהליך לפתרון מוסכם של סכסוכים, הנעשה במקום הגעה לכותלי בית המשפט או
-                  כחלק מההליך, במטרה להגיע להסכמות. ההליך וולונטרי, והצדדים בוחרים יחד את המגשר.
-                </p>
-                <p>
-                  בתוכנית "מתגשרים" אנו משלבים את הכלים המשפטיים עם כלים טיפוליים, מתוך הבנה
-                  שהליך גירושין הוא מסע — איך שתובילו אותו, ככה הוא יוביל אתכם.
-                </p>
+              <Markdown className="space-y-4 text-foreground/85 leading-loose text-lg">
+                {content.whyBody}
+              </Markdown>
+              {content.quote && (
                 <blockquote className="font-tanakh text-xl text-accent border-r-4 border-accent pr-6 py-2 my-6">
-                  "הליך גירושין הוא מסע — איך שתובילו אותו ככה הוא יוביל אתכם."
+                  "{content.quote}"
                 </blockquote>
-              </div>
+              )}
             </div>
           </section>
 
@@ -120,32 +95,24 @@ const Mitgashrim = () => {
                   <Sun className="w-7 h-7" strokeWidth={1.5} />
                 </div>
                 <h2 className="text-2xl lg:text-3xl font-bold text-foreground">
-                  עמותת "אור עליון – נהורא עלאה"
+                  {content.amutaTitle}
                 </h2>
               </div>
-              <div className="space-y-4 text-foreground/85 leading-loose text-lg">
-                <p>
-                  לצד המשרד פועלת עמותת <strong>"אור עליון – נהורא עלאה"</strong>, שהוקמה על ידי
-                  עו"ד שירן שושני-אוכמן, המכהנת כיו"ר העמותה.
+              <Markdown className="space-y-4 text-foreground/85 leading-loose text-lg">
+                {content.amutaBody}
+              </Markdown>
+              <div className="flex items-center gap-3 mt-6 p-5 bg-accent/10 border border-accent/25 rounded-lg">
+                <Users className="w-6 h-6 text-accent shrink-0" />
+                <p className="text-base">
+                  לפרטים נוספים על פעילות העמותה ודרכי סיוע:{" "}
+                  <a href={`tel:${site.mobileIntl}`} className="text-accent font-semibold hover:underline">
+                    {site.mobile}
+                  </a>{" "}
+                  ·{" "}
+                  <a href={`mailto:${site.email}`} className="text-accent font-semibold hover:underline">
+                    {site.email}
+                  </a>
                 </p>
-                <p>
-                  העמותה מסייעת לאנשים היוצאים ממעגל האלימות — ליווי, תמיכה וחיזוק בדרך לחיים
-                  חדשים. גם כשאין סימנים כחולים בגוף, יש צלקות בנפש — ואנחנו כאן כדי לעזור
-                  לרפא אותן.
-                </p>
-                <div className="flex items-center gap-3 mt-6 p-5 bg-accent/10 border border-accent/25 rounded-lg">
-                  <Users className="w-6 h-6 text-accent shrink-0" />
-                  <p className="text-base">
-                    לפרטים נוספים על פעילות העמותה ודרכי סיוע:{" "}
-                    <a href={`tel:${site.mobileIntl}`} className="text-accent font-semibold hover:underline">
-                      {site.mobile}
-                    </a>{" "}
-                    ·{" "}
-                    <a href={`mailto:${site.email}`} className="text-accent font-semibold hover:underline">
-                      {site.email}
-                    </a>
-                  </p>
-                </div>
               </div>
             </div>
           </section>
@@ -154,11 +121,9 @@ const Mitgashrim = () => {
           <section className="bg-accent/15 py-16 border-y border-accent/20">
             <div className="container mx-auto px-6">
               <h2 className="text-center text-2xl font-bold text-foreground mb-3">
-                רוצים לשמוע עוד על "מתגשרים"?
+                {content.contactTitle}
               </h2>
-              <p className="text-center text-foreground/70 mb-8">
-                השאירו פרטים לתיאום פגישת ייעוץ ונחזור אליכם בהקדם
-              </p>
+              <p className="text-center text-foreground/70 mb-8">{content.contactSubtitle}</p>
               <ContactForm />
             </div>
           </section>

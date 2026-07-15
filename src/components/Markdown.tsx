@@ -20,6 +20,12 @@ const Markdown = ({ children, className }: { children: string; className?: strin
         ),
         ul: ({ node, ...props }) => <ul className="list-disc pr-6 space-y-1" {...props} />,
         ol: ({ node, ...props }) => <ol className="list-decimal pr-6 space-y-1" {...props} />,
+        h2: ({ node, ...props }) => (
+          <h2 className="text-xl font-bold text-foreground mt-8 mb-3" {...props} />
+        ),
+        h3: ({ node, ...props }) => (
+          <h3 className="text-lg font-bold text-foreground mt-6 mb-2" {...props} />
+        ),
       }}
     >
       {children}

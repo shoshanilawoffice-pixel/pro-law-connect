@@ -61,53 +61,11 @@ const iconByTitle: Record<string, LucideIcon> = {
 const practiceAreas: { title: string; desc: string; image?: string; Icon: LucideIcon }[] =
   content.practiceAreas.map((p) => ({ ...p, Icon: iconByTitle[p.title] ?? Scale }));
 
-const services = [
-  "ניסיון של שנים בניהול תיקי משפחה וגירושין",
-  "זה לא עוד משרד – זה משרד שאוהב לנצח!",
-  "הבנה מעמיקה של צרכי הלקוח",
-  "זמינות מלאה ויחס אישי",
-  "ליווי אישי צמוד מתחילת ההליך ועד סופו – וגם אחרי",
-  "ידע משפטי רב ומקצועיות חסרת פשרות",
-  "משרד בוטיק שמעניק מעטפת משפטית מלאה",
-  "התמחות במעמד אישי, נוטריון וגישור",
-];
-
-/* ✏️ המלצות לקוחות — החליפו את הטקסטים כאן בהמלצות אמיתיות */
-const testimonials = [
-  {
-    name: "ל.כ, אילת",
-    text: "כאן יופיע טקסט ההמלצה — שתפו את חוויית הליווי, המקצועיות והתוצאה. (טקסט לדוגמה — להחלפה)",
-  },
-  {
-    name: "מ.א, באר שבע",
-    text: "כאן יופיע טקסט ההמלצה — שתפו את חוויית הליווי, המקצועיות והתוצאה. (טקסט לדוגמה — להחלפה)",
-  },
-  {
-    name: "ד.ר, אשדוד",
-    text: "כאן יופיע טקסט ההמלצה — שתפו את חוויית הליווי, המקצועיות והתוצאה. (טקסט לדוגמה — להחלפה)",
-  },
-];
-
-const articles = [
-  {
-    title: "האם הכתובה שחתמת עליה ביום חתונתך באמת יכולה \"לאיים\" עלייך ביום גירושיך?",
-    excerpt:
-      "הכתובה היא אחד המסמכים המרתקים והעתיקים ביותר בדיני המשפחה. רבים רואים בה טקס דתי יפהפה, אך מעטים מבינים את המשמעות המשפטית המלאה שלה.",
-    date: "26/08/2025",
-  },
-  {
-    title: "מתי כדאי לגשת להליך גישור ומתי \"עד הסוף\" במעמד גירושין?",
-    excerpt:
-      "ההחלטה על גירושין היא מורכבת. אחת השאלות המרכזיות היא האם לסיים את הקשר דרך גישור או לפתוח בקרב משפטי בבתי המשפט.",
-    date: "26/08/2025",
-  },
-  {
-    title: "חושבים להתחיל הליך גירושין? אלו הצעדים הראשונים שיש לעשות",
-    excerpt:
-      "החלטה על גירושין היא אחת ההחלטות הקשות והמורכבות ביותר בחיי אדם. תהליך רגשי, משפטי וכלכלי הדורש היערכות ותכנון קפדניים.",
-    date: "19/08/2025",
-  },
-];
+/* כל התוכן מנוהל בפאנל /admin/ דרך src/content/homepage.json */
+const services = content.services;
+const testimonials = content.testimonials;
+const articles = content.articles;
+const quotes = content.quotes;
 
 /* רצועת ציטוט בגופן תנ"כי */
 const QuoteStrip = ({ text, author }: { text: string; author: string }) => (
@@ -204,10 +162,7 @@ const Index = () => {
           </section>
 
           {/* QUOTE 1 */}
-          <QuoteStrip
-            text="החיים הם ההקרנה של מה שאנחנו מאמינים שהם — אז תהיו בתודעה חיובית"
-            author="שירן שושני"
-          />
+          {quotes[0] && <QuoteStrip text={quotes[0].text} author={quotes[0].author} />}
 
           {/* CONTACT STRIP 1 */}
           <section className="bg-accent/15 py-10 border-y border-accent/20">
@@ -283,10 +238,7 @@ const Index = () => {
           </section>
 
           {/* QUOTE 2 */}
-          <QuoteStrip
-            text="קומו, תנערו אבק ותזכרו מי אתם — קושי הוא רק שלב בדרך לפסגה"
-            author="שירן שושני"
-          />
+          {quotes[1] && <QuoteStrip text={quotes[1].text} author={quotes[1].author} />}
 
           {/* ABOUT */}
           <section id="about" className="py-20">
@@ -348,10 +300,7 @@ const Index = () => {
           </section>
 
           {/* QUOTE 3 */}
-          <QuoteStrip
-            text="אנחנו פסיפס אנושי של כל האנשים שפסעו אי פעם בחיינו"
-            author="שירן שושני"
-          />
+          {quotes[2] && <QuoteStrip text={quotes[2].text} author={quotes[2].author} />}
 
           {/* FROM DARK TO LIGHT */}
           <section className="py-20 bg-primary text-primary-foreground">
@@ -438,7 +387,7 @@ const Index = () => {
           </section>
 
           {/* QUOTE 4 */}
-          <QuoteStrip text="האמת תמיד מוצאת את הדרך להתגלות" author="שירן שושני" />
+          {quotes[3] && <QuoteStrip text={quotes[3].text} author={quotes[3].author} />}
 
           {/* CONTACT */}
           <section id="contact" className="bg-accent/15 py-16 border-y border-accent/20">
