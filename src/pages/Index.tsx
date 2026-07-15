@@ -116,7 +116,7 @@ const Index = () => {
             email: site.email,
             address: {
               "@type": "PostalAddress",
-              streetAddress: "שדרות התמרים 4",
+              streetAddress: site.address,
               addressLocality: "אילת",
               addressCountry: "IL",
             },
