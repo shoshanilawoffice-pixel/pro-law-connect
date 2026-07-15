@@ -1,20 +1,52 @@
 <!doctype html>
-<html lang="he" dir="rtl">
+<!-- שלד הממשק נשאר LTR (העיצוב של Decap בנוי לזה); העברית מוזרקת רק לשדות התוכן -->
+<html lang="he">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>ניהול תוכן | שירן שושני – חברת עורכי דין</title>
     <style>
-      /* התאמות RTL קלות לממשק הפאנל */
-      [data-slate-editor="true"] { direction: rtl; text-align: right; }
+      /* ===== תיקוני RTL לפאנל Decap CMS ===== */
+
+      /* שדות הקלדה — עברית מימין לשמאל */
+      input[type="text"],
+      input:not([type]),
+      textarea,
+      [data-slate-editor="true"] {
+        direction: rtl;
+        text-align: right;
+      }
+
+      /* תוויות השדות והקבוצות — יישור לימין וגופן עברי נעים */
+      label,
+      [class*="FieldLabel"],
+      [class*="ListItemTopBar"],
+      [class*="ObjectWidgetTopBar"] {
+        font-family: 'Heebo', 'Segoe UI', Arial, sans-serif !important;
+      }
+
+      /* כרטיסי הרשומות (כמו "דף הבית") — טקסט מיושר לימין, גובה מינימלי נעים */
+      [class*="CardBody"],
+      [class*="ListCard"] a {
+        direction: rtl;
+        text-align: right;
+      }
+
+      /* טקסטים של הודעות/רמזים (hint) בעברית */
+      [class*="FieldHint"],
+      [class*="ControlHint"] {
+        direction: rtl;
+        text-align: right;
+        display: block;
+      }
     </style>
   </head>
   <body>
     <!-- Decap CMS (לשעבר Netlify CMS) — התחברות דרך GitHub OAuth -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
-      // עיצוב התצוגה המקדימה (הצד השמאלי בעורך) בסגנון האתר
+      // עיצוב התצוגה המקדימה (הצד השני בעורך) בסגנון האתר — שם כן RTL מלא
       CMS.registerPreviewStyle("/admin/preview.css");
     </script>
   </body>
